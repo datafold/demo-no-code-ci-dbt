@@ -1,24 +1,24 @@
 WITH orgs AS (
 --prod
-    SELECT
-        org_id
-        , MIN(event_timestamp) AS created_at
-    FROM {{ ref('signed_in') }}
-    GROUP BY 1
+--    SELECT
+--        org_id
+--        , MIN(event_timestamp) AS created_at
+--    FROM {{ ref('signed_in') }}
+--    GROUP BY 1
 
 -- --dev
---    SELECT
---         org_id
---         , org_name
---         , employee_range
---         , created_at
---     FROM {{ ref('org_created') }}
+    SELECT
+         org_id
+         , org_name
+         , employee_range
+         , created_at
+     FROM {{ ref('org_created') }}
 )
 
 , user_count AS (
     SELECT
         org_id
-        , count(distinct user_id) AS num_users
+        , count(distinct user_id) + 1 AS num_users
     FROM {{ ref('user_created') }}
     GROUP BY 1
 )
