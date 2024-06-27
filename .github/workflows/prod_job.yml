@@ -30,4 +30,4 @@ jobs:
           SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
           SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
           SNOWFLAKE_ROLE: ${{ secrets.SNOWFLAKE_ROLE }}
-          SNOWFLAKE_SCHEMA: "${{ 'PROD_NO_CODE_CI_DBT' }}"
+          SNOWFLAKE_SCHEMA_NO_CODE_DBT: "${{ 'PROD_NO_CODE_CI_DBT' }}"
