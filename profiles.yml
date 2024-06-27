@@ -9,5 +9,5 @@ demo:
       role: "{{ env_var('SNOWFLAKE_ROLE') | as_text }}"
       database: DEMO
       warehouse: INTEGRATION
-      schema: "{{ env_var('SNOWFLAKE_SCHEMA') | as_text }}"
+      schema: "{{ env_var('SNOWFLAKE_SCHEMA_NO_CODE_DBT') | as_text }}"
       threads: 24
